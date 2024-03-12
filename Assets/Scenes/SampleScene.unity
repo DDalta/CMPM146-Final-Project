@@ -468,20 +468,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bottomRooms:
   - {fileID: 8328618009387825699, guid: 0742fbdac077880478adf15891bf427f, type: 3}
-  - {fileID: 7414805683245610754, guid: 42087c7afb3d4b04fb396e7dd6cbb632, type: 3}
   - {fileID: 461593492760674585, guid: 1a0f904f0b4f02d4d87fb19ae12124a6, type: 3}
+  - {fileID: 461593492760674585, guid: 1a0f904f0b4f02d4d87fb19ae12124a6, type: 3}
+  - {fileID: 461593492760674585, guid: 1a0f904f0b4f02d4d87fb19ae12124a6, type: 3}
+  - {fileID: 7414805683245610754, guid: 42087c7afb3d4b04fb396e7dd6cbb632, type: 3}
+  - {fileID: 7414805683245610754, guid: 42087c7afb3d4b04fb396e7dd6cbb632, type: 3}
+  - {fileID: 7414805683245610754, guid: 42087c7afb3d4b04fb396e7dd6cbb632, type: 3}
   topRooms:
   - {fileID: 5410196362721367291, guid: 13fc2e77f33931a4986db4d666e82783, type: 3}
-  - {fileID: 4039339691343426258, guid: a3d52c4fe33707b4baeda38c0a777f6b, type: 3}
   - {fileID: 5202961678806767491, guid: a3eea4a88c8db3647b302ff2c96fc6d4, type: 3}
+  - {fileID: 5202961678806767491, guid: a3eea4a88c8db3647b302ff2c96fc6d4, type: 3}
+  - {fileID: 5202961678806767491, guid: a3eea4a88c8db3647b302ff2c96fc6d4, type: 3}
+  - {fileID: 4039339691343426258, guid: a3d52c4fe33707b4baeda38c0a777f6b, type: 3}
+  - {fileID: 4039339691343426258, guid: a3d52c4fe33707b4baeda38c0a777f6b, type: 3}
+  - {fileID: 4039339691343426258, guid: a3d52c4fe33707b4baeda38c0a777f6b, type: 3}
   leftRooms:
   - {fileID: 5783027223576325738, guid: e2a1c4eac9844c74a84dedf91e76a375, type: 3}
-  - {fileID: 4154260505051418011, guid: e6c6e8e61bd547c48a63d433f45cba07, type: 3}
   - {fileID: 4039339691343426258, guid: a3d52c4fe33707b4baeda38c0a777f6b, type: 3}
+  - {fileID: 4039339691343426258, guid: a3d52c4fe33707b4baeda38c0a777f6b, type: 3}
+  - {fileID: 4039339691343426258, guid: a3d52c4fe33707b4baeda38c0a777f6b, type: 3}
+  - {fileID: 4154260505051418011, guid: e6c6e8e61bd547c48a63d433f45cba07, type: 3}
+  - {fileID: 4154260505051418011, guid: e6c6e8e61bd547c48a63d433f45cba07, type: 3}
+  - {fileID: 4154260505051418011, guid: e6c6e8e61bd547c48a63d433f45cba07, type: 3}
   rightRooms:
   - {fileID: 6289991972946246626, guid: a537564bc89bf074cac358908b311add, type: 3}
-  - {fileID: 7414805683245610754, guid: 42087c7afb3d4b04fb396e7dd6cbb632, type: 3}
   - {fileID: 5202961678806767491, guid: a3eea4a88c8db3647b302ff2c96fc6d4, type: 3}
+  - {fileID: 5202961678806767491, guid: a3eea4a88c8db3647b302ff2c96fc6d4, type: 3}
+  - {fileID: 5202961678806767491, guid: a3eea4a88c8db3647b302ff2c96fc6d4, type: 3}
+  - {fileID: 7414805683245610754, guid: 42087c7afb3d4b04fb396e7dd6cbb632, type: 3}
+  - {fileID: 7414805683245610754, guid: 42087c7afb3d4b04fb396e7dd6cbb632, type: 3}
+  - {fileID: 7414805683245610754, guid: 42087c7afb3d4b04fb396e7dd6cbb632, type: 3}
   closedRoom: {fileID: 2890316582481917838, guid: 0763ce74d037a2640bcd57400cf68802, type: 3}
 --- !u!4 &425652465
 Transform:
@@ -492,7 +508,7 @@ Transform:
   m_GameObject: {fileID: 425652463}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8677722, y: -0.69395363, z: -4.610779}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
