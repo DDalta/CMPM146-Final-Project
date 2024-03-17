@@ -31,6 +31,7 @@ public class AgentSensor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // do not scan every frame instead do it every 1/30th of a second
         scanTimer -= Time.deltaTime;
         if (scanTimer < 0)
         {
@@ -42,9 +43,13 @@ public class AgentSensor : MonoBehaviour
 
     private void Scan()
     {
+        // get every object colliding within the defined distance
+        // make sure object is part of the specified layers
         count = Physics2D.OverlapCircleNonAlloc(transform.position, distance, colliders, layers, 0f, 0f);
 
+        // clean up list before updating 
         Objects.Clear();
+        // go through all objects within the disance and check if it is in the sight of the agent
         for(int i = 0; i < count; ++i)
         {
             GameObject obj = colliders[i].gameObject;
@@ -54,7 +59,9 @@ public class AgentSensor : MonoBehaviour
             }
         }
     }
-
+    // check if an object is within the sight of the agent
+    // return false if object not in the angle of the agent's sight
+    // return false if object is behind a wall (walls can be defined in the occlusionLayers mask)
     public bool IsInSight(GameObject obj)
     {
         Vector3 origin = transform.position;
@@ -75,6 +82,7 @@ public class AgentSensor : MonoBehaviour
         return true;
     }
 
+    // creates the mesh for Gizmos
     Mesh CreateWedgeMesh()
     {
         Mesh mesh = new Mesh();
@@ -119,26 +127,32 @@ public class AgentSensor : MonoBehaviour
         return mesh;
     }
 
+    // updated when a value is changed in the inspector
     private void OnValidate()
     {
         mesh = CreateWedgeMesh();
         scanInterval = 1.0f / scanFrequency;
     }
 
+    // draw all gizmos for debugging
     private void OnDrawGizmos()
     {
+        // agent's sight mesh
         if (mesh)
         {
             Gizmos.color = meshColor;
             Gizmos.DrawMesh(mesh, transform.position, transform.rotation);
         }
 
+        // draw red sphere for objects within defined distance
         Gizmos.DrawWireSphere(transform.position, distance);
         for(int i = 0; i < count; ++i) 
         {
             Gizmos.DrawSphere(colliders[i].transform.position, 0.2f);
         }
 
+
+        // draw greeen sphere for objects in agent's line of sight
         Gizmos.color = Color.green;
         foreach (var obj in Objects)
         {
