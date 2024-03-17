@@ -2328,9 +2328,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 801371b20c1fd43419edb60eae4fe00f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 3.99
+  distance: 4
   angle: 69
-  meshColor: {r: 1, g: 0, b: 0, a: 1}
+  meshColor: {r: 1, g: 0, b: 0, a: 0.5254902}
+  scanFrequency: 30
+  layers:
+    serializedVersion: 2
+    m_Bits: 512
+  occlusionLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  Objects: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
