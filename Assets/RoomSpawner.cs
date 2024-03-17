@@ -53,7 +53,6 @@ public class RoomSpawner : MonoBehaviour
             }
             spawned = true;
             navMeshSurface.buildNavMesh();
-            //Destroy(gameObject);
         }
     }
 
