@@ -17,7 +17,7 @@ public class CheckEnemyInFOVRange : Node
         _animator = transform.GetComponent<Animator>();
     }
 
-        /*
+        /* HAD TO COMMENT OUT CUZ OF COMPILE ERRORS SORRY
     public override NodeState Evaluate()
     {
         object t = GetData("target");
