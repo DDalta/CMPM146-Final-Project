@@ -28,7 +28,8 @@ public class RoomSpawner : MonoBehaviour
             {
                 // spawn room with bottom door
                 rand = Random.Range(0, templates.bottomRooms.Length);
-                Instantiate(templates.bottomRooms[rand], transform.position, Quaternion.identity);
+                GameObject room = Instantiate(templates.bottomRooms[rand], transform.position, Quaternion.identity);
+                //room.setSpawners([1, 2, 3, 4]);
             }
             else if (openingDirection == 2)
             {
@@ -49,9 +50,11 @@ public class RoomSpawner : MonoBehaviour
                 Instantiate(templates.rightRooms[rand], transform.position, Quaternion.identity);
             }
             spawned = true;
+            //Destroy(gameObject);
         }
     }
 
+ 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("SpawnPoint"))
@@ -64,4 +67,5 @@ public class RoomSpawner : MonoBehaviour
             spawned = true;
         }
     }
+  
 }

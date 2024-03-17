@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 4394454426215969205}
   - component: {fileID: 5165197214090789094}
   - component: {fileID: 2986193764686887082}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TLRB
   m_TagString: Square
   m_Icon: {fileID: 0}

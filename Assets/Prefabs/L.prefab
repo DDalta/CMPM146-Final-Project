@@ -130,7 +130,8 @@ GameObject:
   - component: {fileID: 3759505425919057145}
   - component: {fileID: 8651799190101746064}
   - component: {fileID: 7345102463342230358}
-  m_Layer: 0
+  - component: {fileID: 9198569610177404042}
+  m_Layer: 7
   m_Name: L
   m_TagString: Square
   m_Icon: {fileID: 0}
@@ -254,6 +255,19 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &9198569610177404042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5783027223576325738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69a7879c14518cf43817a163e2ae8cad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawners: 00000000000000000000000000000000
 --- !u!1001 &3544048996567170819
 PrefabInstance:
   m_ObjectHideFlags: 0

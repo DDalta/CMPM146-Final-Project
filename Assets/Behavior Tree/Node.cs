@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 
+// Behavior Tree from https://youtu.be/aR6wt5BlE-E?si=IZb_hTCcBbCRK_zh
 namespace BehaviorTree
 {
-    // Possible node states: running -> node is running, success -> node runned successfuly, failure -> node run failed
+    // Possible node states: running -> node is running, success -> node ran successfuly, failure -> node run failed
     public enum NodeState
     {
         RUNNING,
@@ -48,7 +49,8 @@ namespace BehaviorTree
         // each node type will have its own evaluation function
         public virtual NodeState Evaluate() => NodeState.FAILURE;
 
-        // stores object in dictionary
+        // stores object in dictionary (gonna modify this too)
+        // store only in root node
         public void SetData(string key, object value)
         {
             _dataContext[key] = value;

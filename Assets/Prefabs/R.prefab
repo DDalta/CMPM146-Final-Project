@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 7796236749688897058}
   - component: {fileID: 114283575834686581}
   - component: {fileID: 7456299844436465559}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: R
   m_TagString: Square
   m_Icon: {fileID: 0}

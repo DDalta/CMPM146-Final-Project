@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 4829652463577689814}
   - component: {fileID: 3500594341262603995}
   - component: {fileID: 6070317906989189238}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BR
   m_TagString: Square
   m_Icon: {fileID: 0}
