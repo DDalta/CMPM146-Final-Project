@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RoomSpawner : MonoBehaviour
@@ -11,12 +12,14 @@ public class RoomSpawner : MonoBehaviour
     // 4 --> spawn room with right door
 
     private RoomTemplates templates;
+    private NavMeshBuilder navMeshSurface;
     private int rand;
     private bool spawned = false;
 
     private void Start()
     {
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
+        navMeshSurface = GameObject.FindGameObjectWithTag("NavMesh").GetComponent<NavMeshBuilder>();
         Invoke("Spawn", 0.1f);
     }
 
@@ -28,8 +31,7 @@ public class RoomSpawner : MonoBehaviour
             {
                 // spawn room with bottom door
                 rand = Random.Range(0, templates.bottomRooms.Length);
-                GameObject room = Instantiate(templates.bottomRooms[rand], transform.position, Quaternion.identity);
-                //room.setSpawners([1, 2, 3, 4]);
+                Instantiate(templates.bottomRooms[rand], transform.position, Quaternion.identity);
             }
             else if (openingDirection == 2)
             {
@@ -50,6 +52,7 @@ public class RoomSpawner : MonoBehaviour
                 Instantiate(templates.rightRooms[rand], transform.position, Quaternion.identity);
             }
             spawned = true;
+            navMeshSurface.buildNavMesh();
             //Destroy(gameObject);
         }
     }

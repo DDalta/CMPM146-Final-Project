@@ -6,7 +6,7 @@ public class Destroyer : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("SpawnPoint") ||collision.CompareTag("Square"))
+        if (collision.transform != transform.parent && (collision.CompareTag("SpawnPoint") || collision.CompareTag("Square")))
         {
             Destroy(collision.gameObject);
         }
