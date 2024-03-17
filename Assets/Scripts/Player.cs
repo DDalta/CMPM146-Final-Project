@@ -18,7 +18,6 @@ public class Player : MonoBehaviour
         agent.updateUpAxis = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -28,10 +27,7 @@ public class Player : MonoBehaviour
             targetPos.x = mouse_position.x;
             targetPos.y = mouse_position.y;
             agent.SetDestination(targetPos);
-        }
-
-        //movement.x = Input.GetAxisRaw("Horizontal");
-        //movement.y = Input.GetAxisRaw("Vertical");   
+        } 
 
         Vector3 rotation = agent.destination - transform.position;
 

@@ -17,6 +17,7 @@ public class CheckEnemyInFOVRange : Node
         _animator = transform.GetComponent<Animator>();
     }
 
+        /*
     public override NodeState Evaluate()
     {
         object t = GetData("target");
@@ -25,7 +26,6 @@ public class CheckEnemyInFOVRange : Node
             Collider[] colliders = Collider2D.IsTouchingLayers(_enemyLayerMask, _playerLayerMask);//check if enemy layermask and the player's vision 2d collider collide. If they do then we return the state as
             //having a target to run away from and sets walking to be true as a reminder to RUN AWAY
             
-
 
             if (colliders.Length > 0)
             {
@@ -42,5 +42,6 @@ public class CheckEnemyInFOVRange : Node
         state = NodeState.SUCCESS;
         return state;
     }
+        */
 
 }
