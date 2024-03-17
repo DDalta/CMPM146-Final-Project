@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
             agent.SetDestination(targetPos);
         } 
 
-        Vector3 rotation = agent.destination - transform.position;
+        Vector3 rotation = (agent.steeringTarget - transform.position).normalized;
 
         float rot_z = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
 
