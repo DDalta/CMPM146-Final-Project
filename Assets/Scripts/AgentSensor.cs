@@ -32,6 +32,7 @@ public class AgentSensor : MonoBehaviour
     void Update()
     {
         // do not scan every frame instead do it every 1/30th of a second
+      
         scanTimer -= Time.deltaTime;
         if (scanTimer < 0)
         {
@@ -45,7 +46,7 @@ public class AgentSensor : MonoBehaviour
     {
         // get every object colliding within the defined distance
         // make sure object is part of the specified layers
-        count = Physics2D.OverlapCircleNonAlloc(transform.position, distance, colliders, layers, 0f, 0f);
+        count = Physics2D.OverlapCircleNonAlloc(transform.position, distance, colliders, layers, -1f, 1f);
 
         // clean up list before updating 
         Objects.Clear();

@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     private NavMeshAgent agent;
 
-    public float speed = 5f;
+    public float speed;
     private Vector3 targetPos = new Vector3(0, 0, 0);
 
     private void Start()
@@ -16,8 +16,10 @@ public class Player : MonoBehaviour
         agent = gameObject.GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        agent.speed = speed;
     }
 
+    /*
     void Update()
     {
         
@@ -37,4 +39,5 @@ public class Player : MonoBehaviour
 
 
     }
+    */
 }

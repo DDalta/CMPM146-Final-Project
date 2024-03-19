@@ -6,42 +6,40 @@ using BehaviorTree;
 
 public class CheckEnemyInFOVRange : Node
 {
-    private static int _enemyLayerMask = LayerMask.NameToLayer("Enemy");
-    private static int _playerLayerMask = LayerMask.NameToLayer("Player");
     private Transform _transform;
-    private Animator _animator;
+    private List<GameObject> _viewableObjects;
 
-    public CheckEnemyInFOVRange(Transform transform)
+    public CheckEnemyInFOVRange(Transform transform, List<GameObject> objs)
     {
         _transform = transform;
-        _animator = transform.GetComponent<Animator>();
+        _viewableObjects = objs;
+
     }
 
-        /* HAD TO COMMENT OUT CUZ OF COMPILE ERRORS SORRY
     public override NodeState Evaluate()
     {
-        object t = GetData("target");
-        if (t == null)
+
+        if (_viewableObjects.Count > 0)
         {
-            Collider[] colliders = Collider2D.IsTouchingLayers(_enemyLayerMask, _playerLayerMask);//check if enemy layermask and the player's vision 2d collider collide. If they do then we return the state as
-            //having a target to run away from and sets walking to be true as a reminder to RUN AWAY
-            
-
-            if (colliders.Length > 0)
+            foreach (GameObject obj in _viewableObjects)
             {
-                parent.parent.SetData("target", colliders[0].transform);
-                _animator.SetBool("Walking", true);
-                state = NodeState.SUCCESS;
-                return state;
+                if (obj.layer == LayerMask.NameToLayer("Enemy"))
+                {
+                    if (Vector3.Distance(_transform.position, obj.transform.position) < 3.5f)
+                    {
+                        Stack<Vector3> visited = (Stack<Vector3>)GetData("VisitedRooms");
+
+                        parent.parent.SetData("Target", visited.Pop());
+                        parent.parent.SetData("VisitedRooms", visited);
+                        state = NodeState.SUCCESS;
+                        return state;
+                    }
+                    
+                }
             }
-
-            state = NodeState.FAILURE;
-            return state;
         }
-
-        state = NodeState.SUCCESS;
+        state = NodeState.FAILURE;
         return state;
     }
-        */
 
 }

@@ -9,7 +9,10 @@ public class Enemy : MonoBehaviour
 
     private GameObject target;
     private NavMeshAgent agent;
-    private float distance;
+    private float distanceFromAgent;
+    private Vector3 origin;
+    private float distanceFromOrigin;
+    private Vector3 targetPosition;
 
     private void Start()
     {
@@ -17,18 +20,36 @@ public class Enemy : MonoBehaviour
         agent = gameObject.GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+
+        origin = transform.position;
+        targetPosition = origin;
     }
 
     // Update is called once per frame
     void Update()
     {
-        distance = Vector3.Distance(transform.position, target.transform.position);
-        Vector2 direction = target.transform.position - transform.position;
 
-        if (distance < 4)
+        distanceFromAgent = Vector3.Distance(transform.position, target.transform.position);
+        distanceFromOrigin = Vector3.Distance(transform.position, origin);
+
+
+        if (distanceFromAgent < 2.5f)
         {
-            //transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
-            agent.SetDestination(target.transform.position);
+            if (distanceFromOrigin < 5f)
+            {
+                targetPosition = target.transform.position;
+            }
+        } else
+        {
+            targetPosition = origin;
+        }
+
+        if (Vector3.Distance(transform.position, targetPosition) > 1f)
+        {
+            agent.SetDestination(targetPosition);
+        } else
+        {
+            agent.ResetPath();
         }
     }
 }
