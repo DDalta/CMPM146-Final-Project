@@ -11,6 +11,7 @@ public class AgentBT : BTree
 
     protected override Node SetupTree()
     {
+
         Node root = new Selector(new List<Node>
         {
             new Sequence(new List<Node>
@@ -20,12 +21,21 @@ public class AgentBT : BTree
             }),
             new Sequence(new List<Node>
             {
+                new CheckAtTarget(transform, agent),
                 new CheckTreasureInFOV(transform, sensor.Objects),
                 new WalkToTarget(transform, "Target", agent),
             }),
             new Sequence(new List<Node>
             {
-                new CheckCenterRoom(transform, "CurrentRoom"),
+                new CheckAtTarget(transform, agent),
+                new Selector(new List<Node>
+                {
+                    new CheckCenterRoom(transform, "CurrentRoom"),
+                    new Inverse(new List<Node>
+                    {
+                        new WalkToTarget(transform, "Target", agent)
+                    }),
+                }),
                 new ChooseRoom(sensor.Objects),
                 new WalkToTarget(transform, "Target", agent)
             })

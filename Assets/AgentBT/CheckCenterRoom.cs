@@ -22,14 +22,16 @@ public class CheckCenterRoom : Node
 
         if (Vector3.Distance(_transform.position, currentRoomPosition) < 0.1f)
         {
-            ClearData("Target");
 
             visited.Push(currentRoomPosition);
-            parent.parent.SetData("VisitedRooms", visited);
+            parent.parent.parent.SetData("VisitedRooms", visited);
 
             state = NodeState.SUCCESS;
             return state;
         }
+        parent.parent.parent.SetData("Target", currentRoomPosition);
+        //state = NodeState.SUCCESS;
+        //return state;
 
         state = NodeState.FAILURE;
         return state;

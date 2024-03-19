@@ -19,6 +19,15 @@ public class Player : MonoBehaviour
         agent.speed = speed;
     }
 
+    private void Update()
+    {
+        Vector3 rotation = (agent.steeringTarget - transform.position).normalized;
+
+        float rot_z = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.Euler(0, 0, rot_z);
+    }
+
     /*
     void Update()
     {

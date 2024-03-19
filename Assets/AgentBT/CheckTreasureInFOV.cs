@@ -27,15 +27,14 @@ public class CheckTreasureInFOV : Node
                     if (obj.layer == LayerMask.NameToLayer("Treasure")) 
                     {
                         parent.parent.SetData("Target", obj.transform.position);
+                        _viewableObjects.Clear();
                         state = NodeState.SUCCESS;
                         return state;
                     }
                 } 
             }
-            state = NodeState.FAILURE;
-            return state;
         }
-        state = NodeState.RUNNING;
+        state = NodeState.FAILURE;
         return state;
     }
 }

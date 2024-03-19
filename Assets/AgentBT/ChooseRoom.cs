@@ -35,6 +35,7 @@ public class ChooseRoom : Node
                         parent.parent.SetData("CurrentRoom", objParentPosition);
 
                         objParent.DestroyEntrances();
+                        _viewableObjects.Clear();
 
                         state = NodeState.SUCCESS;
                         return state;
