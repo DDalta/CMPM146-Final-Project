@@ -1574,7 +1574,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Total Treasure: 0 '
+  m_Text: 'Total Treasure Generated: 0 '
 --- !u!222 &1157883200
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1653,7 +1653,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Collected: 0'
+  m_Text: 'Treasure Collected: 0'
 --- !u!222 &1178954194
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1969,10 +1969,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Click anywhere to move agent (just for testing)
-
-    make sure to have
-    gizmos turned on (top right)'
+  m_Text: 
 --- !u!222 &1633703098
 CanvasRenderer:
   m_ObjectHideFlags: 0

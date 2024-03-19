@@ -35,6 +35,8 @@ public class CheckEnemyInFOVRange : Node
                         parent.parent.SetData("Target", Vector3.zero);
                         parent.parent.SetData("CurrentRoom", Vector3.zero);
                         parent.parent.SetData("ToVisit", toVisit);
+
+                        _viewableObjects.Clear();
                         state = NodeState.SUCCESS;
                         return state;
                     }
