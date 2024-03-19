@@ -41,8 +41,12 @@ public class AgentBT : BTree
             })
         });
 
+        List<Vector3> visited = new List<Vector3>();
+        visited.Add(Vector3.zero);
+
         root.SetData("CurrentRoom", new Vector3(0, 0, 0));
-        root.SetData("VisitedRooms", new Stack<Vector3>());
+        root.SetData("VisitedRooms", new List<Vector3>());
+        root.SetData("ToVisit", new Stack<Vector3>());
 
         return root;
     }

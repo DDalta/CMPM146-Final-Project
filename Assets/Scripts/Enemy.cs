@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
         distanceFromOrigin = Vector3.Distance(transform.position, origin);
 
 
-        if (distanceFromAgent < 2.5f)
+        if (distanceFromAgent < 2.55f)
         {
             if (distanceFromOrigin < 5f)
             {

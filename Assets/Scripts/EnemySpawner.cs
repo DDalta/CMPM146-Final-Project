@@ -16,7 +16,7 @@ public class EnemySpawner : MonoBehaviour
         {
             positionX = transform.position.x;
             positionY = transform.position.y;
-            //GameObject newEnemy = Instantiate(Enemy, new Vector3(Random.Range(-3f + positionX, 3f + positionX), Random.Range(-3f + positionY, 3f + positionY), 0), Quaternion.identity);
+            GameObject newEnemy = Instantiate(Enemy, new Vector3(Random.Range(-3f + positionX, 3f + positionX), Random.Range(-3f + positionY, 3f + positionY), 0), Quaternion.identity);
         }
     }
 }

@@ -25,12 +25,16 @@ public class CheckEnemyInFOVRange : Node
             {
                 if (obj.layer == LayerMask.NameToLayer("Enemy"))
                 {
-                    if (Vector3.Distance(_transform.position, obj.transform.position) < 3.5f)
+                    if (Vector3.Distance(_transform.position, obj.transform.position) < 2.5f)
                     {
-                        Stack<Vector3> visited = (Stack<Vector3>)GetData("VisitedRooms");
+                        Stack<Vector3> toVisit = new Stack<Vector3>((Stack<Vector3>)GetData("ToVisit"));
 
-                        parent.parent.SetData("Target", visited.Pop());
-                        parent.parent.SetData("VisitedRooms", visited);
+                        toVisit.Clear();
+                        toVisit.Push(Vector3.zero);
+
+                        parent.parent.SetData("Target", Vector3.zero);
+                        parent.parent.SetData("CurrentRoom", Vector3.zero);
+                        parent.parent.SetData("ToVisit", toVisit);
                         state = NodeState.SUCCESS;
                         return state;
                     }
